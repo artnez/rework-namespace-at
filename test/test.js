@@ -1,9 +1,9 @@
 var assert = require('assert');
 var read = require('fs').readFileSync;
 var rework = require('rework');
-var namespace = require('./');
+var namespace = require('../');
 
-var css = read('test.css').toString();
+var css = read('test/test.css').toString();
 var style = rework(css).use(namespace());
 var rules = style.obj.stylesheet.rules;
 

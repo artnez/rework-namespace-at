@@ -1,4 +1,8 @@
 @namespace .some-prefix;
+:local {
+  font-family: Arial;
+}
+
 body, input {
   color: red;
   background: red;
@@ -15,6 +19,10 @@ body, input {
 }
 
 @namespace another-prefix;
+:local {
+  font-family: Arial;
+}
+
 header {
   width: 200px;
 }

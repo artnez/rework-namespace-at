@@ -17,7 +17,13 @@ function inject(rule) {
 }
 
 function append(selector) {
-  return this.namespace ? this.namespace + ' ' + selector : selector;
+  if (!this.namespace) {
+    return selector;
+  }
+  if (selector == ':local') {
+    return this.namespace;
+  }
+  return this.namespace + ' ' + selector;
 }
 
 module.exports = function() {

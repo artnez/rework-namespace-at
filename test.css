@@ -1,0 +1,27 @@
+@namespace .some-prefix;
+body, input {
+  color: red;
+  background: red;
+}
+
+.foo {
+  margin: 10px;
+}
+@namespace end;
+
+.foo {
+  margin: 20px;
+  padding: 10px;
+}
+
+@namespace another-prefix;
+header {
+  width: 200px;
+}
+
+@media all {
+  main {
+    height: 500px;
+  }
+}
+@namespace end;

@@ -1,3 +1,5 @@
+var RE_CONTAINS_NS = /\$namespace/g;
+
 function visit(rule) {
   if (rule.rules) {
     rule.rules = rule.rules.filter(visit.bind(this));
@@ -22,8 +24,9 @@ function append(selector) {
   if (!this.namespace) {
     return selector;
   }
-  if (selector == ':local') {
-    return this.namespace;
+  RE_CONTAINS_NS.lastIndex = 0;
+  if (RE_CONTAINS_NS.test(selector)) {
+    return selector.replace(RE_CONTAINS_NS, this.namespace);
   }
   return this.namespace + ' ' + selector;
 }

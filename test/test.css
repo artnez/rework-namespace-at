@@ -1,6 +1,14 @@
 @namespace .some-prefix;
-:local {
+$namespace {
   font-family: Arial;
+}
+
+$namespace.foo {
+  padding: 10px;
+}
+
+$namespace.bar $namespace {
+  outline: 0;
 }
 
 body, input {
@@ -19,7 +27,7 @@ body, input {
 }
 
 @namespace another-prefix;
-:local {
+body.$namespace {
   font-family: Arial;
 }
 

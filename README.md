@@ -32,15 +32,23 @@ Before:
 ```css
 @namespace .some-prefix;
 
-:local {
+$namespace {
   margin: 10px;
 }
 
-.foo {
-  color: #fff;
+$namespace.foo {
+  padding: 10px;
+}
+
+body$namespace {
+  background: white;
 }
 
 .bar {
+  color: #fff;
+}
+
+.baz {
   background: green;
 }
 
@@ -54,11 +62,19 @@ After:
   margin: 10px;
 }
 
-.some-prefix .foo {
-  color: #fff;
+.some-prefix.foo {
+  padding: 10px;
+}
+
+body.some-prefix {
+  background: white;
 }
 
 .some-prefix .bar {
+  color: #fff;
+}
+
+.some-prefix .baz {
   background: green;
 }
 ```

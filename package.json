@@ -1,6 +1,6 @@
 {
   "name": "rework-namespace-at",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Hijacks the @namespace rule as a selector prefix decorator.",
   "main": "index.js",
   "scripts": {

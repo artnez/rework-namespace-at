@@ -32,6 +32,10 @@ Before:
 ```css
 @namespace .some-prefix;
 
+:local {
+  margin: 10px;
+}
+
 .foo {
   color: #fff;
 }
@@ -46,6 +50,10 @@ Before:
 After:
 
 ```css
+.some-prefix {
+  margin: 10px;
+}
+
 .some-prefix .foo {
   color: #fff;
 }

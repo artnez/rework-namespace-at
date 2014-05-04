@@ -12,7 +12,9 @@ function inject(rule) {
     this.namespace = rule.namespace == 'end' ? null : rule.namespace;
     return false;
   }
-  rule.selectors = rule.selectors.map(append.bind(this));
+  if (rule.selectors && rule.selectors.length) {
+    rule.selectors = rule.selectors.map(append.bind(this));
+  }
   return true;
 }
 
